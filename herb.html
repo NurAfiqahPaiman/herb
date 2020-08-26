@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DocP</title>
+    <meta name="description"
+        content="Creative CV is a HTML resume template for professionals. Built with Bootstrap 4, Now UI Kit and FontAwesome, this modern and responsive design template is perfect to showcase your portfolio, skils and experience." />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/aos.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: Arial;
+    }
+
+    /* Style the tab */
+    .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+        background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+        background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+</style>
+
+<body id="top">
+    <div class="page-content">
+        <div class="profile-page">
+            <div style="text-align:center">
+                <div style="text-align:right">
+                    <div>Session closes in <span id="time">00:30</span> second!</div>
+                    <script>
+                        function startTimer(duration, display) {
+                            var timer = duration, minutes, seconds;
+                            setInterval(function () {
+                                minutes = parseInt(timer / 60, 10)
+                                seconds = parseInt(timer % 60, 10);
+
+                                minutes = minutes < 10 ? "0" + minutes : minutes;
+                                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                                display.textContent = minutes + ":" + seconds;
+
+                                if (minutes == 0 && seconds == 0) {
+                            window.location.replace("timeout.html");
+                        }
+
+                                if (--timer < 0) {
+                                    timer = duration;
+                                }
+                            }, 1000);
+                        }
+                       
+                        window.onload = function () {
+                            var Minutes = 60 * 0.5,
+                                display = document.querySelector('#time');
+                            startTimer(Minutes, display);
+                           
+                        };
+
+
+                    </script>
+                </div>
+                <div>
+                    <div><img src="herb.jpg" alt="Image" style="width:150px;height:200px;" /></a></div>
+                    <h3>Pokok Kadok</h3>
+                </div>
+                <div>
+                    <div class="tab">
+                        <button class="tablinks" onclick="openCity(event, 'Detail')" id="defaultOpen">Details</button>
+                        <button class="tablinks" onclick="openCity(event, 'Benefit')">Benefits</button>
+
+                    </div>
+
+                    <div id="Detail" class="tabcontent">
+                        <h3>Details</h3>
+                        <p>Name: Pokok Kadok</p>
+                        <p>Height: </p>
+                        <p>Quatity:</p>
+                    </div>
+
+                    <div id="Benefit" class="tabcontent">
+                        <h3>Benefit</h3>
+                        <ul>
+                            <li>benefit 1</li>
+                            <li>benefit 2</li>
+                            <li>benefit 3</li>
+                        </ul>
+                    </div>
+
+
+
+                    <script>
+                        function openCity(evt, cityName) {
+                            var i, tabcontent, tablinks;
+                            tabcontent = document.getElementsByClassName("tabcontent");
+                            for (i = 0; i < tabcontent.length; i++) {
+                                tabcontent[i].style.display = "none";
+                            }
+                            tablinks = document.getElementsByClassName("tablinks");
+                            for (i = 0; i < tablinks.length; i++) {
+                                tablinks[i].className = tablinks[i].className.replace(" active", "");
+                            }
+                            document.getElementById(cityName).style.display = "block";
+                            evt.currentTarget.className += " active";
+                        }
+
+                        // Get the element with id="defaultOpen" and click on it
+                        document.getElementById("defaultOpen").click();
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
